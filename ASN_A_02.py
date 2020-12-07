@@ -1,18 +1,19 @@
 #1 Function to find the longest word in sentence.
    
-def search(sentence):
+def longest(sentence):
     lst = sentence.split()
-    index = 0
-    long = 0
-    while index< len(lst):
-        lenth = len(lst[index])
-        if lenth>long:
-            long = lenth
-        index+=1
+    lst2 = []
+    i =0
+    while i<len(lst):
+        lst2.append(len(lst[i]))
+        i+=1
+    #return lst2
+    lst3 = []
     for word in lst:
-        if len(word) == long:
-            return word
-#print(search('We are SE Computer students'))
+        if len(word) == max(lst2):
+            lst3.append(word)
+    return lst3
+print(longest('bbb ss ddd nnn'))
 
 '''def longest_world(sentence):
     longest = max(sentence.split(), key=len)
